@@ -1,0 +1,219 @@
+/* GENERAL */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/* DECK STYLES */
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #d4ecfd75 0%, #60afff69 100%);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #2e3d49 url('../img/whale_tail.jpg');
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.open {
+    transform: rotateY(0);
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    background: #02b3e4;
+    backface-visibility: visible;
+    cursor: default;
+    font-size: xx-large;
+}
+
+.deck .card.show {
+    font-size: 33px;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 33px;
+}
+
+.deck .card.lock {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+/* SCORE PANEL STYLES */
+.score-panel {
+    text-align: left;
+    width: 345px;
+    margin-bottom: 10px;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+    font-size: 18px;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+.card {
+  transform: rotateY(180deg);
+  transform-style: preserve-3d;
+  transition: 0.6s;
+}
+
+.green {
+  color: #22841d;
+}
+
+.yellow {
+  color: #c4bf31;
+}
+
+.red {
+  color: #841d1d;
+}
+
+.timer {
+  display: inline;
+  margin-left: 20px;
+  color: #2461af;
+}
+
+/* WIN MESSAGE */
+.win-container {
+  display: none;
+  width: 100%;
+  min-height: 340px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  z-index: 2;
+  position: fixed;
+}
+
+.win-msg {
+  width: 100%;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-size: xx-large;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(160deg, #bad0f9b8 0%, #05288a 100%);
+  border-radius: 10px;
+  padding-top: 145px;
+}
+
+/* RESPONSIVE - MOBILE */
+@media only screen and (max-width: 690px) {
+	.deck {
+		width: 85%;
+    min-height: auto;
+    box-shadow: 3px 3px 10px 0 rgba(46, 61, 73, 0.5);
+    justify-content: space-around;
+	}
+
+	.deck .card {
+		height: 4.7rem;
+		width: 4.7rem;
+    margin: 0.2rem 0.2rem;
+    box-shadow: 3px 3px 10px 0 rgba(46, 61, 73, 0.5);
+	}
+
+  .score-panel {
+    width: auto;
+  }
+
+  .timer {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  h1 {
+    margin: 10px 0;
+  }
+
+  @media only screen and (min-width: 410px) {
+    .deck {
+      padding: 10px;
+      width: 90%;
+    }
+  }
+}
+
+/* RESPONSIVE - TABLET */
+@media only screen and (min-width: 768px) {
+	.container {
+		font-size: 22px;
+	}
+
+	.deck {
+		width: 660px;
+		height: 680px;
+	}
+
+	.deck .card {
+		height: 125px;
+		width: 125px;
+	}
+
+	.popup {
+		width: 60%;
+	}
+}
