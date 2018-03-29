@@ -1,2 +1,21 @@
-# MemoryGameProject
-Memory Game project for Udacity Intermediate JavaScript course
+# Memory Game
+
+## Instructions
+
+Click the cards, two at a time, and try to make matching pairs. Match all of the cards to win! Your number of moves will affect your star rating.  The fewer moves you take, the better your star rating. You are being timed too, so be quick.
+
+## Built With
+
+Built using HTML5, Bootstrap CSS, and vanilla JS.
+
+## Contributing
+
+Memory Game is a class project for [Udacity](https://www.udacity.com/)'s *Intermediate JavaScript* course. Pull requests _will not_ be merged.
+
+## Author
+
+* **Sam Marziano**
+
+## Versioning
+
+Version 1.0 - 03/26/2018
