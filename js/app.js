@@ -2,6 +2,7 @@
 // Store cards in the card array
 let card = document.getElementsByClassName('card');
 let cards = [...card];
+let html;
 
 // Create the deck - this makes it easier to change the card values
 const cardDeck = ['fa-anchor', 'fa-bolt', 'fa-cube', 'fa-bicycle', 'fa-diamond',
@@ -62,6 +63,10 @@ $(function() {
   $('.fa-repeat').on('click', function() {
     reset();
   });
+
+  $('.win-msg').on('click', function() {
+    reset();
+  });
 });
 
 // Reset variables for new game
@@ -79,6 +84,11 @@ function reset() {
   for (var i = 0; i < starsElements.length; i++) {
     starsElements[i].style.display = 'inline-block';
   }
+
+  // Reset win modal
+  $('.win-container').css('display', 'none');
+  $('.win-msg').text('');
+  html = '';
 
   // Reset timer
   second = 0;
@@ -161,7 +171,7 @@ function startTimer() {
         second++;
         if(second == 60){
             minute++;
-            second=0;
+            second = 0;
         }
         if(minute == 60){
             hour++;
@@ -195,16 +205,16 @@ function noMatch() {
 // Win logic
 function youWon() {
   if (matches.length == 16) {
-    // The timeouts allow a transitional feel to the win msg coming and going
+    // The timeout allows a transitional feel to the win msg coming and going
     setTimeout(function() {
-      $('.win-msg').text('You won in ' + moves + ' moves!  Your time was ' + hour + ':' + minute + ':' + second + '!');
+      // Clears timer
+      clearInterval(interval);
+      second -= 1;
+      $('.win-msg').html('<pre>You won in ' + moves + ' moves! \r\rYour time was ' + minute + ' mins ' + second + ' secs!</pre>');
+      html = $('.win-msg').html();
+      html += '<br><p class="play-again"><u>PLAY AGAIN?</u></p>';
+      $('.win-msg').html(html);
       $('.win-container').css('display', 'flex');
     }, 1000);
-    setTimeout(function() {
-      $('.win-container').css('display', 'none');
-      $('.win-msg').text('');
-
-      reset();
-    }, 7000);
   }
 }

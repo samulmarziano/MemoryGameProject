@@ -38,8 +38,8 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #d4ecfd75 0%, #60afff69 100%);
-    padding: 40px;
+    background: linear-gradient(160deg, #d4ecfd 0%, #d3f3f8 100%);
+    padding: 10px 40px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
     display: flex;
@@ -52,7 +52,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #2e3d49 url('../img/whale_tail.jpg');
+    background: #2e3d49 url('../img/blue_spheres.jpg');
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -141,9 +141,7 @@ h1 {
 .win-container {
   display: none;
   width: 100%;
-  min-height: 340px;
   border-radius: 10px;
-  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
   z-index: 2;
   position: fixed;
 }
@@ -155,14 +153,29 @@ h1 {
   font-size: xx-large;
   font-weight: 600;
   color: white;
-  background: linear-gradient(160deg, #bad0f9b8 0%, #05288a 100%);
+  background: linear-gradient(160deg, rgb(186, 208, 249, 0.90) 0%, rgb(5, 40, 138, 0.90) 100%);
   border-radius: 10px;
-  padding-top: 145px;
+  padding: 15% 5px;
+}
+
+.play-again {
+  color: #ddeaff;
+  margin: 0;
+}
+
+pre {
+  margin: 0;
 }
 
 /* RESPONSIVE - MOBILE */
 @media only screen and (max-width: 690px) {
-	.deck {
+  /* GENEREAL */
+  h1 {
+    margin: 10px 0;
+  }
+
+  /* DECK */
+  .deck {
 		width: 85%;
     min-height: auto;
     box-shadow: 3px 3px 10px 0 rgba(46, 61, 73, 0.5);
@@ -176,6 +189,7 @@ h1 {
     box-shadow: 3px 3px 10px 0 rgba(46, 61, 73, 0.5);
 	}
 
+  /* SCORE PANEL */
   .score-panel {
     width: auto;
   }
@@ -185,10 +199,13 @@ h1 {
     margin-left: 10px;
   }
 
-  h1 {
-    margin: 10px 0;
+  /* WIN MESSAGE */
+  .win-msg {
+    font-size: x-large;
+    padding: 15% 0 10% 0;
   }
 
+  /* SMALLER MOBILE SCREENS */
   @media only screen and (min-width: 410px) {
     .deck {
       padding: 10px;
@@ -199,10 +216,13 @@ h1 {
 
 /* RESPONSIVE - TABLET */
 @media only screen and (min-width: 768px) {
-	.container {
+
+  /* GENERAL */
+  .container {
 		font-size: 22px;
 	}
 
+  /* DECK */
 	.deck {
 		width: 660px;
 		height: 680px;
@@ -211,9 +231,5 @@ h1 {
 	.deck .card {
 		height: 125px;
 		width: 125px;
-	}
-
-	.popup {
-		width: 60%;
 	}
 }
