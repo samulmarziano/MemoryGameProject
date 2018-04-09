@@ -3,7 +3,7 @@
 ## Table of Contents
 
 * [Instructions](#instructions)
-* [Built With](#built with)
+* [BuiltWith](#builtwith)
 * [Contributing](#contributing)
 * [Author](#author)
 
@@ -11,7 +11,7 @@
 
 Click the cards, two at a time, and try to make matching pairs. Match all of the cards to win! Your number of moves will affect your star rating.  The fewer moves you take, the better your star rating. You are being timed too, so be quick.
 
-## Built With
+## BuiltWith
 
 Built using HTML5, Bootstrap CSS, vanilla JS, and JQuery.
 
