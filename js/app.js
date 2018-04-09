@@ -5,9 +5,9 @@ let cards = [...card];
 let html;
 
 // Create the deck - this makes it easier to change the card values
-const cardDeck = ['fa-anchor', 'fa-bolt', 'fa-cube', 'fa-bicycle', 'fa-diamond',
-'fa-leaf', 'fa-bomb', 'fa-paper-plane-o', 'fa-anchor', 'fa-bolt', 'fa-cube', 'fa-bicycle', 'fa-diamond',
+const deckArray = ['fa-anchor', 'fa-bolt', 'fa-cube', 'fa-bicycle', 'fa-diamond',
 'fa-leaf', 'fa-bomb', 'fa-paper-plane-o'];
+const cardDeck = deckArray.concat(deckArray);
 
 // Resets moves and counter
 let moves = 0;
@@ -61,7 +61,7 @@ $(function() {
   layoutDeck();
 
   $('.fa-repeat').on('click', function() {
-    reset();
+    location.reload();
   });
 
   $('.win-msg').on('click', function() {
@@ -104,6 +104,7 @@ function reset() {
   matches = [];
   shuffle();
   layoutDeck();
+  //location.reload();
 }
 
 // Layout the shuffled deck
@@ -193,12 +194,18 @@ function match() {
 
 // Cards don't match, flip them back over
 function noMatch() {
-  flippedCards[0].classList.add('lock');
-  flippedCards[1].classList.add('lock');
+  // locks all the cards so only two are active at a time
+  for (var i = 0; i < card.length; i++) {
+    card[i].classList.add('lock');
+  }
+
   setTimeout(function() {
     flippedCards[0].classList.remove('open', 'show', 'lock');
     flippedCards[1].classList.remove('open', 'show', 'lock');
     flippedCards = [];
+    for (var i = 0; i < card.length; i++) {
+      card[i].classList.remove('lock');
+    }
   }, 1100);
 }
 
