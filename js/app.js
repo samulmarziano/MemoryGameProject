@@ -74,6 +74,7 @@ function reset() {
   // Flip all cards back over
   $('*').removeClass('open show');
   $('*').removeClass('match');
+  $('*').removeClass('matched');
 
   // Makes all cards clickable again
   $('.card').removeClass('lock');
@@ -183,8 +184,8 @@ function startTimer() {
 
 // Change the classes from flipping the card to matched card
 function match() {
-  flippedCards[0].classList.add('match', 'lock');
-  flippedCards[1].classList.add('match', 'lock');
+  flippedCards[0].classList.add('match', 'lock', 'matched');
+  flippedCards[1].classList.add('match', 'lock', 'matched');
   flippedCards[0].classList.remove('open', 'show');
   flippedCards[1].classList.remove('open', 'show');
   matches.push(flippedCards[0]);
