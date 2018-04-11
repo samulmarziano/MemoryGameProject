@@ -1,4 +1,4 @@
-# Memory Game Version 1.0 03/26/2018
+# Memory Game Version 1.2 03/26/2018
 
 ## Table of Contents
 
@@ -6,6 +6,7 @@
 * [BuiltWith](#builtwith)
 * [Contributing](#contributing)
 * [Author](#author)
+* [Versioning](#versioning)
 
 ## Instructions
 
@@ -22,3 +23,9 @@ This repository is a class project for [Udacity](https://www.udacity.com/)'s *In
 ## Author
 
 * **Sam Marziano**
+
+## Versioning
+
+* 1.0 - Original commit
+* 1.1 - Fixed issues with card flipping functionality
+* 1.2 - Fixed issue where matched cards were still flipping
